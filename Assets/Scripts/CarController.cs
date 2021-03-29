@@ -18,6 +18,9 @@ public class CarController : MonoBehaviour
     public float groundRayLength = 0.75f;
     float dragOnGround;
     public float gravityMod = 10f;
+    public Transform leftFrontWheel;
+    public Transform rightFrontWheel;
+    public float maxWheelTurn = 25f;
 
     void Start()
     {
@@ -45,6 +48,9 @@ public class CarController : MonoBehaviour
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Mathf.Sign(speedInput) * (theRB.velocity.magnitude / maxSpeed), 0f));
         }
 
+        // turning the wheels
+        leftFrontWheel.localRotation = Quaternion.Euler(leftFrontWheel.localRotation.eulerAngles.x, (turnInput * maxWheelTurn) - 180, leftFrontWheel.localRotation.eulerAngles.z);
+        rightFrontWheel.localRotation = Quaternion.Euler(rightFrontWheel.localRotation.eulerAngles.x, (turnInput * maxWheelTurn), rightFrontWheel.localRotation.eulerAngles.z);
         transform.position = theRB.position;
     }
 
