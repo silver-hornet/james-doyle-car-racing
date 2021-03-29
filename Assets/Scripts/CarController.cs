@@ -13,6 +13,7 @@ public class CarController : MonoBehaviour
     float turnInput;
     bool grounded;
     public Transform groundRayPoint;
+    public Transform groundRayPoint2;
     public LayerMask whatIsGround;
     public float groundRayLength = 0.75f;
     float dragOnGround;
@@ -51,10 +52,24 @@ public class CarController : MonoBehaviour
     {
         grounded = false;
         RaycastHit hit;
+        Vector3 normalTarget = Vector3.zero;
 
         if (Physics.Raycast(groundRayPoint.position, -transform.up, out hit, groundRayLength, whatIsGround))
         {
             grounded = true;
+            normalTarget = hit.normal;
+        }
+
+        if (Physics.Raycast(groundRayPoint2.position, -transform.up, out hit, groundRayLength, whatIsGround))
+        {
+            grounded = true;
+            normalTarget = (normalTarget + hit.normal) / 2f; // getting average of the two raycasts by dividing by 2
+        }
+
+            // when on ground, rotate to match the normal
+            if (grounded)
+        {
+            transform.rotation = Quaternion.FromToRotation(transform.up, normalTarget) * transform.rotation;
         }
 
         if (grounded)
