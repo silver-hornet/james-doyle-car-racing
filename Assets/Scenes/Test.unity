@@ -5546,6 +5546,13 @@ MonoBehaviour:
   leftFrontWheel: {fileID: 764600601}
   rightFrontWheel: {fileID: 1891728063}
   maxWheelTurn: 25
+  dustTrail:
+  - {fileID: 566594020}
+  - {fileID: 1406665248}
+  - {fileID: 1460881218}
+  - {fileID: 1913609515}
+  maxEmission: 25
+  emissionFadeSpeed: 50
 --- !u!1001 &1327360002
 PrefabInstance:
   m_ObjectHideFlags: 0
