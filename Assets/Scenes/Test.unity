@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700530a58f815435a8b297d5dbb8d451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cpNunber: 0
+  cpNumber: 0
 --- !u!4 &139983679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 0769671249457974c84835bed83b242b,
@@ -658,7 +658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700530a58f815435a8b297d5dbb8d451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cpNunber: 0
+  cpNumber: 0
 --- !u!4 &373001562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: ea135b5535d07804488c1ba38b6da7ad,
@@ -6179,6 +6179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1812daddbea37425e9611b43afab3698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theCar: {fileID: 1063361574}
 --- !u!1001 &1034008499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16654,7 +16655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700530a58f815435a8b297d5dbb8d451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cpNunber: 0
+  cpNumber: 0
 --- !u!1 &1718897001
 GameObject:
   m_ObjectHideFlags: 0
@@ -21795,7 +21796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700530a58f815435a8b297d5dbb8d451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cpNunber: 0
+  cpNumber: 0
 --- !u!1001 &2039324267
 PrefabInstance:
   m_ObjectHideFlags: 0

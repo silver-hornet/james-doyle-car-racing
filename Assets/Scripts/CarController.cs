@@ -28,6 +28,8 @@ public class CarController : MonoBehaviour
     public AudioSource engineSound;
     public AudioSource skidSound;
     public float skidFadeSpeed = 2f;
+    int nextCheckpoint;
+    int currentLap;
 
     void Start()
     {
@@ -145,6 +147,20 @@ public class CarController : MonoBehaviour
         if (grounded && Input.GetAxis("Vertical") != 0)
         {
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Mathf.Sign(speedInput) * (theRB.velocity.magnitude / maxSpeed), 0f));
+        }
+    }
+
+    public void CheckpointHit(int cpNumber)
+    {
+        if (cpNumber == nextCheckpoint)
+        {
+            nextCheckpoint++;
+
+            if (nextCheckpoint == RaceManager.instance.allCheckpoints.Length)
+            {
+                nextCheckpoint = 0;
+                currentLap++;
+            }
         }
     }
 }
