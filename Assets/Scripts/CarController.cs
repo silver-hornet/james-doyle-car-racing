@@ -138,7 +138,7 @@ public class CarController : MonoBehaviour
             theRB.velocity = theRB.velocity.normalized * maxSpeed;
         }
 
-        Debug.Log(theRB.velocity.magnitude);
+        //Debug.Log(theRB.velocity.magnitude);
 
         transform.position = theRB.position;
 

@@ -10,7 +10,7 @@ public class RaceManager : MonoBehaviour
     {
         for (int i = 0; i < allCheckpoints.Length; i++)
         {
-            allCheckpoints[i].cpNunber = i;
+            allCheckpoints[i].cpNumber = i;
         }
     }
 

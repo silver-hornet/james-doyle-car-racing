@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    public int cpNunber;
+    public int cpNumber;
 }
