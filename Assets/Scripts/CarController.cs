@@ -25,6 +25,7 @@ public class CarController : MonoBehaviour
     public float maxEmission = 25f;
     public float emissionFadeSpeed = 50f;
     float emissionRate;
+    public AudioSource engineSound;
 
     void Start()
     {
@@ -75,6 +76,11 @@ public class CarController : MonoBehaviour
         {
             var emissionModule = dustTrail[i].emission;
             emissionModule.rateOverTime = emissionRate;
+        }
+
+        if (engineSound != null)
+        {
+            engineSound.pitch = 1f + ((theRB.velocity.magnitude / maxSpeed) * 2f);
         }
     }
 
