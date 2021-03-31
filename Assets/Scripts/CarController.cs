@@ -26,6 +26,8 @@ public class CarController : MonoBehaviour
     public float emissionFadeSpeed = 50f;
     float emissionRate;
     public AudioSource engineSound;
+    public AudioSource skidSound;
+    public float skidFadeSpeed = 2f;
 
     void Start()
     {
@@ -64,7 +66,7 @@ public class CarController : MonoBehaviour
 
         if (grounded && (Mathf.Abs(turnInput) > 0.5f || (theRB.velocity.magnitude < maxSpeed * 0.5f && theRB.velocity.magnitude != 0)))
         {
-            emissionRate = maxEmission;
+            emissionRate = maxEmission; 
         }
 
         if (theRB.velocity.magnitude <= 0.5f)
@@ -81,6 +83,18 @@ public class CarController : MonoBehaviour
         if (engineSound != null)
         {
             engineSound.pitch = 1f + ((theRB.velocity.magnitude / maxSpeed) * 2f);
+        }
+
+        if (skidSound != null)
+        {
+            if (Mathf.Abs(turnInput) > 0.5f)
+            {
+                skidSound.volume = 1f;
+            }
+            else
+            {
+                skidSound.volume = Mathf.MoveTowards(skidSound.volume, 0f, skidFadeSpeed * Time.deltaTime);
+            }
         }
     }
 
