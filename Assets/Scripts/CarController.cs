@@ -30,6 +30,8 @@ public class CarController : MonoBehaviour
     public float skidFadeSpeed = 2f;
     int nextCheckpoint;
     public int currentLap = 1;
+    public float lapTime;
+    public float bestLapTime;
 
     void Start()
     {
@@ -40,6 +42,11 @@ public class CarController : MonoBehaviour
 
     void Update()
     {
+        lapTime += Time.deltaTime;
+
+        var ts = System.TimeSpan.FromSeconds(lapTime);
+        UIManager.instance.currentLapTimeText.text = string.Format("{0:00}m{1:00}.{2:000}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
+
         speedInput = 0;
 
         if (Input.GetAxis("Vertical") > 0)
@@ -168,6 +175,16 @@ public class CarController : MonoBehaviour
     public void LapCompleted()
     {
         currentLap++;
+        if (lapTime < bestLapTime || bestLapTime == 0)
+        {
+            bestLapTime = lapTime;
+        }
+
+        lapTime = 0f;
+
+        var ts = System.TimeSpan.FromSeconds(bestLapTime);
+        UIManager.instance.bestLapTimeText.text = string.Format("{0:00}m{1:00}.{2:000}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
+
         UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
     }
 }
