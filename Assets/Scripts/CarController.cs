@@ -29,12 +29,13 @@ public class CarController : MonoBehaviour
     public AudioSource skidSound;
     public float skidFadeSpeed = 2f;
     int nextCheckpoint;
-    int currentLap;
+    public int currentLap = 1;
 
     void Start()
     {
         theRB.transform.parent = null;
         dragOnGround = theRB.drag;
+        UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
     }
 
     void Update()
@@ -159,8 +160,14 @@ public class CarController : MonoBehaviour
             if (nextCheckpoint == RaceManager.instance.allCheckpoints.Length)
             {
                 nextCheckpoint = 0;
-                currentLap++;
+                LapCompleted();
             }
         }
+    }
+
+    public void LapCompleted()
+    {
+        currentLap++;
+        UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
     }
 }
