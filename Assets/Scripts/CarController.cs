@@ -32,6 +32,7 @@ public class CarController : MonoBehaviour
     public int currentLap = 1;
     public float lapTime;
     public float bestLapTime;
+    public bool isAI;
 
     void Start()
     {
@@ -44,26 +45,29 @@ public class CarController : MonoBehaviour
     {
         lapTime += Time.deltaTime;
 
-        var ts = System.TimeSpan.FromSeconds(lapTime);
-        UIManager.instance.currentLapTimeText.text = string.Format("{0:00}m{1:00}.{2:000}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
-
-        speedInput = 0;
-
-        if (Input.GetAxis("Vertical") > 0)
+        if (!isAI)
         {
-            speedInput = Input.GetAxis("Vertical") * forwardAccel;
-        }
-        else if (Input.GetAxis("Vertical") < 0)
-        {
-            speedInput = Input.GetAxis("Vertical") * reverseAccel;
-        }
+            var ts = System.TimeSpan.FromSeconds(lapTime);
+            UIManager.instance.currentLapTimeText.text = string.Format("{0:00}m{1:00}.{2:000}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
 
-        turnInput = Input.GetAxis("Horizontal");
+            speedInput = 0;
 
-        //if (grounded && Input.GetAxis("Vertical") != 0)
-        //{
-        //    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Mathf.Sign(speedInput) * (theRB.velocity.magnitude / maxSpeed), 0f));
-        //}
+            if (Input.GetAxis("Vertical") > 0)
+            {
+                speedInput = Input.GetAxis("Vertical") * forwardAccel;
+            }
+            else if (Input.GetAxis("Vertical") < 0)
+            {
+                speedInput = Input.GetAxis("Vertical") * reverseAccel;
+            }
+
+            turnInput = Input.GetAxis("Horizontal");
+
+            //if (grounded && Input.GetAxis("Vertical") != 0)
+            //{
+            //    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Mathf.Sign(speedInput) * (theRB.velocity.magnitude / maxSpeed), 0f));
+            //}
+        }
 
         // turning the wheels
         leftFrontWheel.localRotation = Quaternion.Euler(leftFrontWheel.localRotation.eulerAngles.x, (turnInput * maxWheelTurn) - 180, leftFrontWheel.localRotation.eulerAngles.z);
@@ -182,9 +186,12 @@ public class CarController : MonoBehaviour
 
         lapTime = 0f;
 
-        var ts = System.TimeSpan.FromSeconds(bestLapTime);
-        UIManager.instance.bestLapTimeText.text = string.Format("{0:00}m{1:00}.{2:000}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
+        if (!isAI)
+        {
+            var ts = System.TimeSpan.FromSeconds(bestLapTime);
+            UIManager.instance.bestLapTimeText.text = string.Format("{0:00}m{1:00}.{2:000}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
 
-        UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
+            UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
+        }
     }
 }
