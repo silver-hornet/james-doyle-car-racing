@@ -95,15 +95,7 @@ public class CarController : MonoBehaviour
 
             if (Vector3.Distance(transform.position, targetPoint) < aiReachPointRange)
             {
-                currentTarget++;
-
-                if (currentTarget >= RaceManager.instance.allCheckpoints.Length)
-                {
-                    currentTarget = 0;
-                }
-
-                targetPoint = RaceManager.instance.allCheckpoints[currentTarget].transform.position;
-                RandomizeAITarget();
+                SetNextAITarget();
             }
 
             Vector3 targetDirection = targetPoint - transform.position;
@@ -234,6 +226,27 @@ public class CarController : MonoBehaviour
                 LapCompleted();
             }
         }
+
+        if (isAI)
+        {
+            if (cpNumber == currentTarget)
+            {
+                SetNextAITarget();
+            }
+        }
+    }
+
+    public void SetNextAITarget()
+    {
+        currentTarget++;
+
+        if (currentTarget >= RaceManager.instance.allCheckpoints.Length)
+        {
+            currentTarget = 0;
+        }
+
+        targetPoint = RaceManager.instance.allCheckpoints[currentTarget].transform.position;
+        RandomizeAITarget();
     }
 
     public void LapCompleted()
