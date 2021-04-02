@@ -48,18 +48,21 @@ public class CarController : MonoBehaviour
     public float aiPointVariance = 3f;
     public float aiMaxTurn = 30f;
     float aiSpeedInput;
+    float aiSpeedMod;
 
     void Start()
     {
         theRB.transform.parent = null;
         dragOnGround = theRB.drag;
-        UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
 
         if (isAI)
         {
             targetPoint = RaceManager.instance.allCheckpoints[currentTarget].transform.position;
             RandomizeAITarget();
+            aiSpeedMod = Random.Range(0.8f, 1.1f);
         }
+
+        UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
     }
 
     void Update()
@@ -118,7 +121,7 @@ public class CarController : MonoBehaviour
                 aiSpeedInput = Mathf.MoveTowards(aiSpeedInput, aiTurnSpeed, aiAccelerateSpeed);
             }
 
-            speedInput = aiSpeedInput * forwardAccel;
+            speedInput = aiSpeedInput * forwardAccel * aiSpeedMod;
         }
 
         // turning the wheels
@@ -208,7 +211,7 @@ public class CarController : MonoBehaviour
 
         transform.position = theRB.position;
 
-        if (grounded && Input.GetAxis("Vertical") != 0)
+        if (grounded && speedInput != 0)
         {
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Mathf.Sign(speedInput) * (theRB.velocity.magnitude / maxSpeed), 0f));
         }
