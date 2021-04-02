@@ -11,9 +11,11 @@ public class CameraController : MonoBehaviour
     public float maxDistance = 50f;
     float activeDistance;
 
+    public Transform startTargetOffset;
+
     void Start()
     {
-        offsetDir = transform.position - target.transform.position;
+        offsetDir = transform.position - startTargetOffset.transform.position;
         activeDistance = minDistance;
         offsetDir.Normalize();
     }
