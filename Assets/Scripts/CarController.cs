@@ -5,12 +5,14 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     public Rigidbody theRB;
+
     public float maxSpeed;
     public float forwardAccel = 8f;
     public float reverseAccel = 4f;
     float speedInput;
     public float turnStrength = 180f;
     float turnInput;
+
     bool grounded;
     public Transform groundRayPoint;
     public Transform groundRayPoint2;
@@ -18,27 +20,45 @@ public class CarController : MonoBehaviour
     public float groundRayLength = 0.75f;
     float dragOnGround;
     public float gravityMod = 10f;
+
     public Transform leftFrontWheel;
     public Transform rightFrontWheel;
     public float maxWheelTurn = 25f;
+
     public ParticleSystem[] dustTrail;
     public float maxEmission = 25f;
     public float emissionFadeSpeed = 50f;
     float emissionRate;
+
     public AudioSource engineSound;
     public AudioSource skidSound;
     public float skidFadeSpeed = 2f;
+
     int nextCheckpoint;
     public int currentLap = 1;
     public float lapTime;
     public float bestLapTime;
+
     public bool isAI;
+    public int currentTarget;
+    Vector3 targetPoint;
+    public float aiAccelerateSpeed = 1f;
+    public float aiTurnSpeed = 0.8f;
+    public float aiReachPointRange = 5f;
+    public float aiPointVariance = 3f;
+    float aiSpeedInput;
 
     void Start()
     {
         theRB.transform.parent = null;
         dragOnGround = theRB.drag;
         UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
+
+        if (isAI)
+        {
+            targetPoint = RaceManager.instance.allCheckpoints[currentTarget].transform.position;
+            RandomizeAITarget();
+        }
     }
 
     void Update()
@@ -67,6 +87,23 @@ public class CarController : MonoBehaviour
             //{
             //    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Mathf.Sign(speedInput) * (theRB.velocity.magnitude / maxSpeed), 0f));
             //}
+        }
+        else
+        {
+            targetPoint.y = transform.position.y;
+
+            if (Vector3.Distance(transform.position, targetPoint) < aiReachPointRange)
+            {
+                currentTarget++;
+
+                if (currentTarget >= RaceManager.instance.allCheckpoints.Length)
+                {
+                    currentTarget = 0;
+                }
+
+                targetPoint = RaceManager.instance.allCheckpoints[currentTarget].transform.position;
+                RandomizeAITarget();
+            }
         }
 
         // turning the wheels
@@ -193,5 +230,10 @@ public class CarController : MonoBehaviour
 
             UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
         }
+    }
+
+    public void RandomizeAITarget()
+    {
+        targetPoint += new Vector3(Random.Range(-aiPointVariance, aiPointVariance), 0f, Random.Range(-aiPointVariance, aiPointVariance));
     }
 }
