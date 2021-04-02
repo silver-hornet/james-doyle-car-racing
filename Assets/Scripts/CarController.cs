@@ -46,6 +46,7 @@ public class CarController : MonoBehaviour
     public float aiTurnSpeed = 0.8f;
     public float aiReachPointRange = 5f;
     public float aiPointVariance = 3f;
+    public float aiMaxTurn = 30f;
     float aiSpeedInput;
 
     void Start()
@@ -104,6 +105,28 @@ public class CarController : MonoBehaviour
                 targetPoint = RaceManager.instance.allCheckpoints[currentTarget].transform.position;
                 RandomizeAITarget();
             }
+
+            Vector3 targetDirection = targetPoint - transform.position;
+            float angle = Vector3.Angle(targetDirection, transform.forward);
+
+            Vector3 localPos = transform.InverseTransformPoint(targetPoint);
+            if (localPos.x < 0f)
+            {
+                angle = -angle;
+            }
+
+            turnInput = Mathf.Clamp(angle / aiMaxTurn, -1f, 1f);
+
+            if (Mathf.Abs(angle) < aiMaxTurn)
+            {
+                aiSpeedInput = Mathf.MoveTowards(aiSpeedInput, 1f, aiAccelerateSpeed);
+            }
+            else
+            {
+                aiSpeedInput = Mathf.MoveTowards(aiSpeedInput, aiTurnSpeed, aiAccelerateSpeed);
+            }
+
+            speedInput = aiSpeedInput * forwardAccel;
         }
 
         // turning the wheels
