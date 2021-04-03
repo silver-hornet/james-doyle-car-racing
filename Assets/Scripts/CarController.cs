@@ -34,7 +34,7 @@ public class CarController : MonoBehaviour
     public AudioSource skidSound;
     public float skidFadeSpeed = 2f;
 
-    int nextCheckpoint;
+    public int nextCheckpoint;
     public int currentLap = 1;
     public float lapTime;
     public float bestLapTime;
@@ -135,7 +135,7 @@ public class CarController : MonoBehaviour
 
         if (grounded && (Mathf.Abs(turnInput) > 0.5f || (theRB.velocity.magnitude < maxSpeed * 0.5f && theRB.velocity.magnitude != 0)))
         {
-            emissionRate = maxEmission; 
+            emissionRate = maxEmission;
         }
 
         if (theRB.velocity.magnitude <= 0.5f)
@@ -185,8 +185,8 @@ public class CarController : MonoBehaviour
             normalTarget = (normalTarget + hit.normal) / 2f; // getting average of the two raycasts by dividing by 2
         }
 
-            // when on ground, rotate to match the normal
-            if (grounded)
+        // when on ground, rotate to match the normal
+        if (grounded)
         {
             transform.rotation = Quaternion.FromToRotation(transform.up, normalTarget) * transform.rotation;
         }
