@@ -12682,6 +12682,10 @@ MonoBehaviour:
   - {fileID: 2080349410}
   playerPosition: 0
   timeBetweenPosCheck: 0.2
+  aiDefaultSpeed: 30
+  playerDefaultSpeed: 30
+  rubberBandSpeedMod: 3.5
+  rubberBandAccel: 0.5
 --- !u!4 &1931094262
 Transform:
   m_ObjectHideFlags: 0
