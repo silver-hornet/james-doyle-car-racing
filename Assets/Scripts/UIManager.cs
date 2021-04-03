@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public TMP_Text lapCounterText;
     public TMP_Text bestLapTimeText;
     public TMP_Text currentLapTimeText;
+    public TMP_Text positionText;
 
     void Awake()
     {
