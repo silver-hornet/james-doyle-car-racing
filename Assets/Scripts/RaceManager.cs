@@ -26,6 +26,10 @@ public class RaceManager : MonoBehaviour
     float startCounter;
     public int countdownCurrent = 3;
 
+    public int playerStartPosition;
+    public int aiNumberToSpawn;
+    public Transform[] startPoints;
+
     void Awake()
     {
         instance = this;
@@ -41,6 +45,10 @@ public class RaceManager : MonoBehaviour
         startCounter = timeBetweenStartCount;
 
         UIManager.instance.countdownText.text = countdownCurrent.ToString();
+
+        playerStartPosition = Random.Range(0, aiNumberToSpawn);
+        playerCar.transform.position = startPoints[playerStartPosition].position;
+        playerCar.theRB.transform.position = startPoints[playerStartPosition].position;
     }
 
     void Update()
