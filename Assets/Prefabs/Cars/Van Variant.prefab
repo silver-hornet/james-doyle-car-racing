@@ -166,7 +166,7 @@ PrefabInstance:
     - target: {fileID: 6451115867641782923, guid: 7b9f23c8af97c432a8a0022b5cb4fe3f,
         type: 3}
       propertyPath: m_Name
-      value: Van
+      value: Van Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b9f23c8af97c432a8a0022b5cb4fe3f, type: 3}

@@ -75,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 5124824691003306631, guid: 162e403ccf078457681372e8e004ef53,
         type: 3}
       propertyPath: m_Name
-      value: Racecar
+      value: Racecar Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6169974722074738032, guid: 162e403ccf078457681372e8e004ef53,
         type: 3}

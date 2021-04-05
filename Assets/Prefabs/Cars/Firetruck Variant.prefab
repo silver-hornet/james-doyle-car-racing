@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 6983891582715381896, guid: 67e2177d205384b879a264e232d3ea0a,
         type: 3}
       propertyPath: m_Name
-      value: Firetruck
+      value: Firetruck Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6983891582715381897, guid: 67e2177d205384b879a264e232d3ea0a,
         type: 3}

@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 929363815574638677, guid: c40842321bf8246a9809162337f88198,
         type: 3}
       propertyPath: m_Name
-      value: SUV
+      value: SUV Variant
       objectReference: {fileID: 0}
     - target: {fileID: 929363815574638679, guid: c40842321bf8246a9809162337f88198,
         type: 3}

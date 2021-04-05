@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 4219973100934321092, guid: 6552f453eb9194b81b60570745ac4541,
         type: 3}
       propertyPath: m_Name
-      value: Garbage Truck
+      value: Garbage Truck Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4219973100934321093, guid: 6552f453eb9194b81b60570745ac4541,
         type: 3}

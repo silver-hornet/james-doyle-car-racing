@@ -106,7 +106,7 @@ PrefabInstance:
     - target: {fileID: 2621170413985628530, guid: 88ae4d672d86246eeac1884eb94e52d6,
         type: 3}
       propertyPath: m_Name
-      value: Tractor
+      value: Tractor Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2621170413985628531, guid: 88ae4d672d86246eeac1884eb94e52d6,
         type: 3}

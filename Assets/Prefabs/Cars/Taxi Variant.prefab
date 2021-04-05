@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3387170744082889168, guid: 2b2ea8cd8d5bc4f3abd886b6fe48810f,
         type: 3}
       propertyPath: m_Name
-      value: Taxi
+      value: Taxi Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3387170744082889169, guid: 2b2ea8cd8d5bc4f3abd886b6fe48810f,
         type: 3}

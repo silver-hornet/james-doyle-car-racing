@@ -151,7 +151,7 @@ PrefabInstance:
     - target: {fileID: 2983604061422292545, guid: 49186b79355a344f59a60990cfd6aca4,
         type: 3}
       propertyPath: m_Name
-      value: Hatchback Sports
+      value: Hatchback Sports Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2983604061422292547, guid: 49186b79355a344f59a60990cfd6aca4,
         type: 3}

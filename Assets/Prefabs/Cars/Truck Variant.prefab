@@ -161,7 +161,7 @@ PrefabInstance:
     - target: {fileID: 7162586704087264059, guid: 9f6528054d0c14fa19fca48a174bd629,
         type: 3}
       propertyPath: m_Name
-      value: Truck
+      value: Truck Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8203782940369674939, guid: 9f6528054d0c14fa19fca48a174bd629,
         type: 3}

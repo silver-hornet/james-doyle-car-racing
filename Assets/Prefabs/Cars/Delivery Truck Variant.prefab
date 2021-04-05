@@ -156,7 +156,12 @@ PrefabInstance:
     - target: {fileID: 8490948972200825897, guid: 0d987399adfcd47168a8d10e49f61dac,
         type: 3}
       propertyPath: m_Name
-      value: Delivery Truck
+      value: Delivery Truck Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8490948972200825898, guid: 0d987399adfcd47168a8d10e49f61dac,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8490948972200825899, guid: 0d987399adfcd47168a8d10e49f61dac,
         type: 3}
@@ -168,6 +173,11 @@ PrefabInstance:
       propertyPath: rightFrontWheel
       value: 
       objectReference: {fileID: 5330599261613116361}
+    - target: {fileID: 8490948972200825899, guid: 0d987399adfcd47168a8d10e49f61dac,
+        type: 3}
+      propertyPath: isAI
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d987399adfcd47168a8d10e49f61dac, type: 3}
 --- !u!4 &6983891582715381897 stripped

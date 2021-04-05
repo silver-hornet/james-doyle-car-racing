@@ -106,7 +106,7 @@ PrefabInstance:
     - target: {fileID: 7710719130818773934, guid: be0ebef5f0cfe4838ae0a449f4cb4884,
         type: 3}
       propertyPath: m_Name
-      value: Police
+      value: Police Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7710719130818773935, guid: be0ebef5f0cfe4838ae0a449f4cb4884,
         type: 3}

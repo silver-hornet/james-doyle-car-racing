@@ -22,10 +22,20 @@ PrefabInstance:
       propertyPath: rightFrontWheel
       value: 
       objectReference: {fileID: 609410149590840093}
+    - target: {fileID: 7034273664197769404, guid: c0f36855db53441ac83cacccaf938ea9,
+        type: 3}
+      propertyPath: isAI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034273664197769405, guid: c0f36855db53441ac83cacccaf938ea9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7034273664197769406, guid: c0f36855db53441ac83cacccaf938ea9,
         type: 3}
       propertyPath: m_Name
-      value: Race Future
+      value: Race Future Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7034273664197769407, guid: c0f36855db53441ac83cacccaf938ea9,
         type: 3}
