@@ -12538,14 +12538,9 @@ MonoBehaviour:
   - {fileID: 2007260695}
   - {fileID: 637756883}
   - {fileID: 216056411}
-  totalLaps: 5
+  totalLaps: 1
   playerCar: {fileID: 1717930045}
-  allAICars:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  allAICars: []
   playerPosition: 0
   timeBetweenPosCheck: 0.2
   aiDefaultSpeed: 30
@@ -12581,6 +12576,7 @@ MonoBehaviour:
   - {fileID: 7162586704087264057, guid: 9f6528054d0c14fa19fca48a174bd629, type: 3}
   - {fileID: 6451115867641782921, guid: 7b9f23c8af97c432a8a0022b5cb4fe3f, type: 3}
   - {fileID: 2947210158017122910, guid: 842a25e4c5b1042b09e21cabae0a0c1e, type: 3}
+  raceCompleted: 0
 --- !u!4 &1931094262
 Transform:
   m_ObjectHideFlags: 0
