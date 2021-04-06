@@ -2520,7 +2520,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You finished 3rd
+  m_text: Exit Race
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 05651d44a51b3494188937ba56f963c2, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 05651d44a51b3494188937ba56f963c2, type: 2}
@@ -5861,7 +5861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &898386189
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11989,6 +11989,8 @@ MonoBehaviour:
   positionText: {fileID: 1989611441}
   countdownText: {fileID: 749834967}
   goText: {fileID: 1362883317}
+  raceResultText: {fileID: 370786032}
+  resultsScreen: {fileID: 898386188}
 --- !u!1001 &1818504136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12927,6 +12929,7 @@ MonoBehaviour:
   - {fileID: 6451115867641782921, guid: 7b9f23c8af97c432a8a0022b5cb4fe3f, type: 3}
   - {fileID: 2947210158017122910, guid: 842a25e4c5b1042b09e21cabae0a0c1e, type: 3}
   raceCompleted: 0
+  raceCompleteScene: Test
 --- !u!4 &1931094262
 Transform:
   m_ObjectHideFlags: 0
@@ -14496,6 +14499,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1810904129}
+    - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitRace
+      objectReference: {fileID: 0}
+    - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 454401788494244975, guid: 92fb2127be0d54e0bb9560630b37fa29,
         type: 3}
