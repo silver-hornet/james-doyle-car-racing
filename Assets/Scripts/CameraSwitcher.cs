@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class CameraSwitcher : MonoBehaviour
 {
+    public static CameraSwitcher instance;
+
     public GameObject[] cameras;
     int currentCam;
 
-    void Start()
+    public CameraController topDownCam;
+    public Cinemachine.CinemachineVirtualCamera cineCam;
+
+    void Awake()
     {
-        
+        instance = this;
     }
 
     void Update()
@@ -35,5 +40,12 @@ public class CameraSwitcher : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SetTarget(CarController playerCar)
+    {
+        topDownCam.target = playerCar;
+        cineCam.m_Follow = playerCar.transform;
+        cineCam.m_LookAt = playerCar.transform;
     }
 }
