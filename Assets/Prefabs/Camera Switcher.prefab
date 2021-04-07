@@ -358,6 +358,8 @@ MonoBehaviour:
   cameras:
   - {fileID: 4382428107267047922}
   - {fileID: 4382428105264805141}
+  topDownCam: {fileID: 4382428107267047934}
+  cineCam: {fileID: 4382428105219889118}
 --- !u!1 &4382428107267047922
 GameObject:
   m_ObjectHideFlags: 0
