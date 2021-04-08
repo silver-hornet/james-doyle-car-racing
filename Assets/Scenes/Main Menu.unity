@@ -379,7 +379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &306237713
 RectTransform:
   m_ObjectHideFlags: 0
@@ -716,7 +716,7 @@ PrefabInstance:
     - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
+      value: OpenTrackSelect
       objectReference: {fileID: 0}
     - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
         type: 3}
@@ -5718,7 +5718,7 @@ PrefabInstance:
     - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
+      value: CloseTrackSelect
       objectReference: {fileID: 0}
     - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
         type: 3}
@@ -6096,7 +6096,7 @@ PrefabInstance:
     - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
+      value: OpenRacerSelect
       objectReference: {fileID: 0}
     - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
         type: 3}
@@ -6554,7 +6554,7 @@ PrefabInstance:
     - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
+      value: CloseRacerSelect
       objectReference: {fileID: 0}
     - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
         type: 3}
@@ -6950,7 +6950,7 @@ PrefabInstance:
     - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
+      value: CloseRaceSetup
       objectReference: {fileID: 0}
     - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
         type: 3}
@@ -7093,6 +7093,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def5a366e398b4800b599bde32d403ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raceSetupPanel: {fileID: 186533420}
+  trackSelectPanel: {fileID: 1900835697}
+  racerSelectPanel: {fileID: 306237712}
 --- !u!1 &1666754930
 GameObject:
   m_ObjectHideFlags: 0
@@ -7499,7 +7502,7 @@ PrefabInstance:
     - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
+      value: OpenRaceSetup
       objectReference: {fileID: 0}
     - target: {fileID: 454401788494244961, guid: 92fb2127be0d54e0bb9560630b37fa29,
         type: 3}
@@ -7602,7 +7605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1900835698
 RectTransform:
   m_ObjectHideFlags: 0
