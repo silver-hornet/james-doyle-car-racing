@@ -2,12 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public static MainMenu instance;
+
     public GameObject raceSetupPanel;
     public GameObject trackSelectPanel;
     public GameObject racerSelectPanel;
+    public Image trackSelectImage;
+    public Image racerSelectImage;
+
+    void Awake()
+    {
+        instance = this;
+    }
 
     public void StartGame()
     {
