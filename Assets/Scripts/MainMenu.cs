@@ -19,8 +19,20 @@ public class MainMenu : MonoBehaviour
         instance = this;
     }
 
+    void Start()
+    {
+        if (RaceInfoManager.instance.enteredRace)
+        {
+            trackSelectImage.sprite = RaceInfoManager.instance.trackSprite;
+            racerSelectImage.sprite = RaceInfoManager.instance.racerSprite;
+
+            OpenRaceSetup();
+        }
+    }
+
     public void StartGame()
     {
+        RaceInfoManager.instance.enteredRace = true;
         SceneManager.LoadScene(RaceInfoManager.instance.trackToLoad);
     }
 

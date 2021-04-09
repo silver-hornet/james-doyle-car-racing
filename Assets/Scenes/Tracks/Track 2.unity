@@ -8615,6 +8615,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1177507445650960229, guid: fedba99d05b9a4dbca9761fe05943763,
+        type: 3}
+      propertyPath: m_text
+      value: Exit Race
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fedba99d05b9a4dbca9761fe05943763, type: 3}
 --- !u!1001 &845352461
@@ -17580,7 +17585,7 @@ MonoBehaviour:
   - {fileID: 6451115867641782921, guid: 7b9f23c8af97c432a8a0022b5cb4fe3f, type: 3}
   - {fileID: 2947210158017122910, guid: 842a25e4c5b1042b09e21cabae0a0c1e, type: 3}
   raceCompleted: 0
-  raceCompleteScene: 
+  raceCompleteScene: Main Menu
 --- !u!4 &1931094262
 Transform:
   m_ObjectHideFlags: 0

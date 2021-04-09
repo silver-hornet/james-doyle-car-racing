@@ -10,6 +10,10 @@ public class RaceInfoManager : MonoBehaviour
     public int noOfAI;
     public int noOfLaps;
 
+    public bool enteredRace;
+    public Sprite trackSprite;
+    public Sprite racerSprite;
+
     void Awake()
     {
         if (instance == null)
@@ -21,15 +25,5 @@ public class RaceInfoManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
     }
 }
