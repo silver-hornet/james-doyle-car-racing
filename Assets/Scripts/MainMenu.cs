@@ -28,6 +28,8 @@ public class MainMenu : MonoBehaviour
 
             OpenRaceSetup();
         }
+
+        PlayerPrefs.SetInt(RaceInfoManager.instance.trackToLoad + "_unlocked", 1);
     }
 
     public void StartGame()
