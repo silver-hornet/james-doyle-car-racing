@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
     public TMP_Text raceResultText;
     public GameObject resultsScreen;
     public GameObject pauseScreen;
+    public GameObject trackUnlockedMessage;
+
     public bool isPaused;
 
     void Awake()

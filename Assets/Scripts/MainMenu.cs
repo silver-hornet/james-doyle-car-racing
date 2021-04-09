@@ -32,6 +32,17 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt(RaceInfoManager.instance.trackToLoad + "_unlocked", 1);
     }
 
+    void Update()
+    {
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PlayerPrefs.DeleteAll();
+            Debug.Log("Keys deleted");
+        }
+    }
+#endif
+
     public void StartGame()
     {
         RaceInfoManager.instance.enteredRace = true;
