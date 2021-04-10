@@ -34,14 +34,14 @@ public class MainMenu : MonoBehaviour
 
     void Update()
     {
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.P))
         {
             PlayerPrefs.DeleteAll();
             Debug.Log("Keys deleted");
         }
     }
-#endif
+//#endif
 
     public void StartGame()
     {
