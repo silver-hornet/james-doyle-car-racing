@@ -7302,7 +7302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trackSceneName: Track 3
   trackImage: {fileID: 1768959891}
-  raceLaps: 4
+  raceLaps: 2
   unlockedText: {fileID: 1901121428}
   trackToUnlockOnWin: 
 --- !u!1 &846439421
@@ -8960,7 +8960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trackSceneName: Track 1
   trackImage: {fileID: 2127169670}
-  raceLaps: 1
+  raceLaps: 2
   unlockedText: {fileID: 1228321656}
   trackToUnlockOnWin: Track 2
 --- !u!1 &1228321656
@@ -11320,7 +11320,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LOCKED
+  m_text: COMING SOON
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11921,9 +11921,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trackSceneName: Track 2
   trackImage: {fileID: 673983920}
-  raceLaps: 4
+  raceLaps: 1
   unlockedText: {fileID: 846439421}
-  trackToUnlockOnWin: Track 3
+  trackToUnlockOnWin: 
 --- !u!1001 &2081418960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12281,6 +12281,17 @@ PrefabInstance:
         type: 3}
       propertyPath: trackToUnlock
       value: Track 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 256529717575697572, guid: f9a3f3580dd5d40cd803169fcc7eacb6,
+        type: 3}
+      propertyPath: racerToUse
+      value: 
+      objectReference: {fileID: 1516300603259160478, guid: a2434318cb9134e4591b7eb66517f03c,
+        type: 3}
+    - target: {fileID: 256529717575697572, guid: f9a3f3580dd5d40cd803169fcc7eacb6,
+        type: 3}
+      propertyPath: noOfLaps
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 256529717575697573, guid: f9a3f3580dd5d40cd803169fcc7eacb6,
         type: 3}
