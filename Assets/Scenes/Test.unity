@@ -1359,6 +1359,24 @@ MonoBehaviour:
   - {fileID: 1671853084}
   - {fileID: 343388272}
   - {fileID: 139929093}
+  totalLaps: 0
+  playerCar: {fileID: 1063361574}
+  allAICars: []
+  playerPosition: 0
+  timeBetweenPosCheck: 0.2
+  aiDefaultSpeed: 30
+  playerDefaultSpeed: 30
+  rubberBandSpeedMod: 3.5
+  rubberBandAccel: 0.5
+  isStarting: 0
+  timeBetweenStartCount: 1
+  countdownCurrent: 3
+  playerStartPosition: 0
+  aiNumberToSpawn: 0
+  startPoints: []
+  carsToSpawn: []
+  raceCompleted: 0
+  raceCompleteScene: 
 --- !u!4 &1727168062
 Transform:
   m_ObjectHideFlags: 0
